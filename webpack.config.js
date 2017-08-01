@@ -31,6 +31,9 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: "babel!react-svg"
+      },{
+        test: /\.png$/,
+        loader: "url-loader",
       }
     ]
   }
