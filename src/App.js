@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import Home from './views/Home';
@@ -9,7 +9,9 @@ export default class App extends Component {
     return (
       <div>
         <Nav/>
-        <Route path="/" component={Home}/>
+        <Switch>
+          <Route path="/" component={Home}/>
+        </Switch>
       </div>
     );
   }
