@@ -11,6 +11,7 @@ class Show extends Component {
         <h1>The Changelog</h1>
         <h2>Changelog Media</h2>
         <ShowDetails/>
+        <h1>Episodes</h1>
         <EpisodeList/>
       </div>
     );

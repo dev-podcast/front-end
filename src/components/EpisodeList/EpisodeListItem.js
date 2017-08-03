@@ -1,13 +1,13 @@
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 import './style.scss';
 
 const EpisodeListItem = (props) => {
   return (
     <div className="episode-list-item">
-      <div><p className="episode-title">{props.title}</p></div>
-      <div><p>Released: {props.rel}</p></div>
-      <div><p>{props.desc}</p></div>
-      <div><p>Listen: {props.link}</p></div>
+      <div className="ep-title"><h3>{props.title}</h3></div>
+      <div className="ep-released"><p>Released: {props.rel}<FontAwesome className="listen-icon" name='volume-up'/></p></div>
+      <div className="ep-description"><p>{props.desc}</p></div>
     </div>
   );
 };
