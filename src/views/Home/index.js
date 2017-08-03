@@ -22,7 +22,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <h1>New Episodes</h1>
+        <h1>New EPISODES</h1>
         <EpisodeSlider/>
       </div>
     );

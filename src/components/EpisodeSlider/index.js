@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EpisodeThumbnail from '../EpisodeThumbnail';
 import { connect } from "react-redux";
 import FontAwesome from 'react-fontawesome';
+import Slider from 'react-slick';
 import './style.scss';
 
 // WILL BE CONNECTED TO REDUX STORE, WITH ALL PODCASTS AVAILABLE THROUGH
@@ -26,15 +27,16 @@ class EpisodeSlider extends Component {
   }
 
   renderNewEpisodes() {
-    // when you click right, remove the episode at position 0 and put it at the end of the array
     return this.state.newEpisodes.map(episode => {
       return (
-        <EpisodeThumbnail
-          key={episode._id}
-          img={episode.img}
-          title={episode.title}
-          airdate={episode.airdate}
-        />
+        <a href="/show">
+          <EpisodeThumbnail
+            key={episode._id}
+            img={episode.img}
+            title={episode.title}
+            airdate={episode.airdate}
+          />
+        </a>
       );
     });
   }
@@ -48,25 +50,21 @@ class EpisodeSlider extends Component {
     this.setState({newEpisodes : episodes});
   }
 
- handleClickLeft() {
+  handleClickLeft() {
    let episodes = this.state.newEpisodes;
    let last = episodes.pop();
    episodes.unshift(last);
    this.setState({newEpisodes : episodes});
- }
+  }
 
   render() {
     return (
       <div className="episode-slider">
-
-          <FontAwesome className="left-nav" onClick={this.handleClickLeft.bind(this)} name='chevron-left'/>
-
-        <div className="thumbnails">
+        <FontAwesome className="left-nav" onClick={this.handleClickLeft.bind(this)} name='chevron-left'/>
+          <div className="thumbnails">
           {this.renderNewEpisodes()}
-        </div>
-
-          <FontAwesome className="right-nav" onClick={this.handleClickRight.bind(this)} name='chevron-right'/>
-
+          </div>
+        <FontAwesome className="right-nav" onClick={this.handleClickRight.bind(this)} name='chevron-right'/>
       </div>
     );
   }

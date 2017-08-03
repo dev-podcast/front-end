@@ -1,0 +1,25 @@
+@import '../../styles/main.scss';
+
+.episode-list {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+  background-color: blue;
+}
+
+.episode-list-item {
+  width: 100%;
+  background-color: white;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.episode-title {
+  font-size: 18px;
+  background-color: $yellow-green;
+}

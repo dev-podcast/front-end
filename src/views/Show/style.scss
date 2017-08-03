@@ -1,0 +1,19 @@
+@import '../../styles/main.scss';
+
+.show {
+  height: 2000px;
+  width: 100%;
+  text-align: center;
+
+  h1 {
+    text-transform: uppercase;
+    margin-top: 150px;
+    font-size: 32px;
+    color: $heading-text;
+  }
+
+  h2 {
+    color: white;
+    margin-bottom: 0px;
+  }
+}
