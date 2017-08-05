@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import EpisodeSlider from '../../components/EpisodeSlider';
-
 import { connect } from "react-redux";
-// import { fetchPodcasts } from "../../actions";
+import { fetchPodcasts } from "../../actions";
 
 import './style.scss';
 
@@ -12,12 +11,12 @@ class Home extends Component {
     super(props);
   }
 
-  // THIS COMPONENT RESPONSIBLE FOR FETCHING INITIAL PODCAST DATA AND UPDATING
-  // REDUX STORE
+  // THIS COMPONENT RESPONSIBLE FOR FETCHING MOST RECENT 15 EPISODES AND PASSING DATA
+  // TO EPISODESLIDER
 
-  // componentDidMount(){
-  //   this.props.fetchPodcasts();
-  // }
+  componentDidMount(){
+    this.props.fetchPodcasts();
+  }
 
   render() {
     return (
@@ -29,5 +28,4 @@ class Home extends Component {
   }
 }
 
-//export default connect(null, { fetchPodcasts })(Home);
-export default Home;
+export default connect(null, { fetchPodcasts })(Home);

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { Link, Route } from "react-router-dom"
 import EpisodeThumbnail from '../EpisodeThumbnail';
 import { connect } from "react-redux";
 import FontAwesome from 'react-fontawesome';
 import Slider from 'react-slick';
 import './style.scss';
 
-// WILL BE CONNECTED TO REDUX STORE, WITH ALL PODCASTS AVAILABLE THROUGH
-// THIS.PROPS.PODCASTS
+// WILL RECEIVE 15 EPISODES FROM HOME TO RENDER IN SLIDER
 
 class EpisodeSlider extends Component {
   constructor(props) {
